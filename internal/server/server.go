@@ -21,8 +21,8 @@ func NewServer(infoLogger, errorLogger *log.Logger, address string) *Server{
 		InfoLogger:infoLogger,
 		ErrorLogger:errorLogger,
 		Address: address,
-		Db: &database.MemoryDatabase{Db:make(map[string]*types.User)},
-		Chache: &database.Chache{Chache: make(map[string]*types.User)},
+		Db: &database.MemoryDatabase{Db:make(map[string] types.User)},
+		Chache: &database.Chache{Chache: make(map[string] types.User)},
 	}
 }
 
