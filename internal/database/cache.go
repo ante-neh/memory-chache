@@ -6,10 +6,10 @@ type MemoryStorage interface {
 	GetUserById(string) types.User
 }
 
-type chache struct {
-	chache map[string]string
+type Chache struct {
+	Chache map[string]*types.User
 }
 
-func (c *chache) GetUserById(id string) *types.User{
+func (c *Chache) GetUserById(id string) *types.User{
 	return nil 
 }
