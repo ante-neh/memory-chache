@@ -21,8 +21,8 @@ func (c *Chache) GetUserById(id string) (*types.User, bool){
 	defer mu.RUnlock()
 
 	//get the user
-	user := c.Chache[id] 
-	return &user, false
+	user, ok := c.Chache[id] 
+	return &user, ok
 }
 
 func (c *Chache) AddUser(id string, user types.User) error{

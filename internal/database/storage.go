@@ -10,7 +10,7 @@ type MemoryDatabase struct{
 }
 
 func(md * MemoryDatabase) GetUserById(id string) (*types.User, bool){
-	user := md.Db[id]
+	user, ok := md.Db[id]
 
-	return &user, false 
+	return &user, ok 
 }
