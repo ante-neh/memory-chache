@@ -12,12 +12,14 @@ func (s *Server) handleGetUser(w http.ResponseWriter, r *http.Request){
 
 	if !ok {
 		util.ResponseWithJson(w, 200, user)
+		return 
 	}
 
 	user, ok = s.Db.GetUserById(id)
 
 	if ok{
 		util.ResponseWithError(w, 404, "user not found")
+		return 
 	}
 
 	s.Chache.AddUser(id, *user)
